@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Игорь Ильягуев](https://up.htmlacademy.ru/javascript/17/user/870405).
-* Наставник: `Неизвестно`.
+* Наставник: `Кексобот`.
 
 ---
 
