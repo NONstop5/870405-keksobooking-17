@@ -4,7 +4,7 @@
 
   var PINS_COUNT = 5;
   var PIN_MAIN_SIZE = 65;
-  var PinArowCord = {
+  var PinArrowCord = {
     MIN_X: 0,
     MAX_X: 1200,
     MIN_Y: 130,
@@ -39,7 +39,7 @@
           top: mapPinMain.offsetTop - offsetMouseCords.y
         };
 
-        if (newCords.top > PinArowCord.MIN_Y - PIN_MAIN_SIZE && newCords.top < PinArowCord.MAX_Y && newCords.left > PinArowCord.MIN_X && newCords.left < PinArowCord.MAX_X - PIN_MAIN_SIZE) {
+        if (newCords.top > PinArrowCord.MIN_Y - PIN_MAIN_SIZE && newCords.top < PinArrowCord.MAX_Y && newCords.left > PinArrowCord.MIN_X && newCords.left < PinArrowCord.MAX_X - PIN_MAIN_SIZE) {
           startMouseCords.x = mousemoveEvt.clientX;
           startMouseCords.y = mousemoveEvt.clientY;
 
