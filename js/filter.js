@@ -12,11 +12,12 @@
   var addFormOptionsFilterEvents = function () {
     formFilterElem.addEventListener('click', function (evt) {
       var tagName = evt.target.tagName;
+      /*
       var priceLimits = {
         low: 10000,
         high: 50000
       };
-
+      */
       if (tagName === 'OPTION') {
         var selectedOptions = [];
         var formFilterSelectNodes = formFilterElem.querySelectorAll('select');
@@ -32,11 +33,13 @@
           return item !== 'any';
         });
 
+        /*
         var filteredAdsArray = window.map.originalAdsArray.filter(function (ad) {
           return selectedOptions.every(function (optionName) {
-            ad.offer[optionName] = 
+            ad.offer[optionName] =
           });
         });
+         */
       }
 
     });
@@ -46,7 +49,7 @@
   var addFormFeaturesFilterEvents = function () {
     formFilterfeaturesElem.addEventListener('click', function (evt) {
       var tagName = evt.target.tagName;
-      var name = evt.target.name;
+      // var name = evt.target.name;
 
       if (tagName === 'INPUT') {
         var checkedFeatures = [];
