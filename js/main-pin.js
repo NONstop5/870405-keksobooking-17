@@ -81,7 +81,7 @@
 
     var onSuccess = function (data) {
       window.map.originalAdsArray = data.slice();
-      window.pins.generateMapPins(data.slice(PINS_COUNT));
+      window.pins.generateMapPins(data.slice(0, data.length - (data.length - PINS_COUNT)));
       window.map.setMapDisabledClasses(false);
       window.filter.setFilterDisabled(false);
       window.form.setAdFormDisabled(false);
