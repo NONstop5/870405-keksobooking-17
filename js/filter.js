@@ -42,7 +42,7 @@
 
       window.popup.removePopupCard();
       window.pins.deleteMapPins();
-      window.pins.generateMapPins(filteredAdsArray.slice(0, 5));
+      window.debounce(window.pins.generateMapPins(filteredAdsArray.slice(0, 5)));
     });
   };
 
@@ -68,7 +68,7 @@
 
       window.popup.removePopupCard();
       window.pins.deleteMapPins();
-      window.pins.generateMapPins(filteredAdsArray.slice(0, 5));
+      window.debounce(window.pins.generateMapPins(filteredAdsArray.slice(0, 5)));
     });
   };
 
