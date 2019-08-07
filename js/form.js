@@ -96,7 +96,7 @@
 
   // Отправка данных в формате JSON на сервер
   var sendFormDataJSON = function () {
-    var url = 'https://js.dump.academy/keksobooking1';
+    var url = 'https://js.dump.academy/keksobooking';
 
     var onSuccess = function () {
       window.messages.showSaccessMessage();
