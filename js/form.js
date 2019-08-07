@@ -14,7 +14,7 @@
     adressFieldElem.value = leftCords + ', ' + topCords;
   };
 
-  // Устанавливает сласс доступности формы
+  // Устанавливает класс доступности формы
   var setAdFormDisabledClasses = function (flag) {
     if (flag) {
       adFormElem.classList.add('ad-form--disabled');

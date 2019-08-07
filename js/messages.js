@@ -1,6 +1,8 @@
 'use strict';
 
 (function () {
+  var ESC_KEY_CODE = 27;
+
   // Показываем сообщение об удачной отправке формы
   var showSaccessMessage = function () {
     var saccessMessageElem = saccessMessageTemplate.cloneNode(true);
@@ -18,19 +20,45 @@
     addErrorMessageEvent(errorMessageElem);
   };
 
+  // Создаем события закрытия окон с сообщениями
+  var addCloseMessageEvents = function (messageElem, errorMessageButton) {
+    if (errorMessageButton !== undefined) {
+      errorMessageButton.addEventListener('click', function () {
+        window.map.mapElem.removeChild(messageElem);
+        removeCloseEvents();
+      });
+    }
+
+    var onClickAnywhere = function () {
+      window.map.mapElem.removeChild(messageElem);
+      removeCloseEvents();
+    };
+    document.addEventListener('click', onClickAnywhere);
+
+    var onEscPress = function (evt) {
+      if (evt.keyCode === ESC_KEY_CODE) {
+        window.map.mapElem.removeChild(messageElem);
+        removeCloseEvents();
+      }
+    };
+    document.addEventListener('keydown', onEscPress);
+
+    var removeCloseEvents = function () {
+      document.removeEventListener('click', onClickAnywhere);
+      document.removeEventListener('keydown', onEscPress);
+    };
+  };
+
   // Навешиваем собитие на сообщение об ошибке
   var addErrorMessageEvent = function (errorMessageElem) {
     var errorMessageButton = errorMessageElem.lastElementChild;
-    errorMessageButton.addEventListener('click', function () {
-      window.map.mapElem.removeChild(errorMessageElem);
-    });
+
+    addCloseMessageEvents(errorMessageElem, errorMessageButton);
   };
 
   // Навешиваем собитие на сообщение об удачной отправке формы
   var addSaccessMessageEvent = function (saccessMessageElem) {
-    saccessMessageElem.addEventListener('click', function () {
-      window.map.mapElem.removeChild(saccessMessageElem);
-    });
+    addCloseMessageEvents(saccessMessageElem);
   };
 
   var saccessMessageTemplate = document.querySelector('#success').content.querySelector('div');
