@@ -10,10 +10,12 @@
   // Навешиваем события на фильтр выпадающих списков
   var addFormOptionsFilterEvents = function () {
     formFilterElem.addEventListener('change', function () {
+      /*
       var priceLimits = {
         low: 10000,
         high: 50000
       };
+      */
       var selectedOptions = [];
       var formFilterSelectNodes = formFilterElem.querySelectorAll('select');
 
