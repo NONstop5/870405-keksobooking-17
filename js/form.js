@@ -35,6 +35,8 @@
     window.pins.deleteMapPins();
     window.mainPin.setMainPinToStartCords();
     window.map.setMapDisabledClasses(true);
+    pricePerNightElem.min = 0;
+    pricePerNightElem.placeholder = 0;
     adFormElem.reset();
     setAdFormDisabled(true);
   };
@@ -42,7 +44,8 @@
   // Навешиваем события на тип жилья
   var addHousingTypeEvent = function () {
     housingTypeElem.addEventListener('change', function (evt) {
-      var selectedValue = evt.target.value;
+      var selectedValue = evt.target.value.toUpperCase();
+
       pricePerNightElem.min = HousingTypeMinPrice[selectedValue];
       pricePerNightElem.placeholder = HousingTypeMinPrice[selectedValue];
     });

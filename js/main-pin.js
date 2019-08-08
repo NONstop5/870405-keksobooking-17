@@ -39,7 +39,11 @@
           top: mapPinMain.offsetTop - offsetMouseCords.y
         };
 
-        if (newCords.top > PinArrowCord.MIN_Y - PIN_MAIN_SIZE && newCords.top < PinArrowCord.MAX_Y && newCords.left > PinArrowCord.MIN_X && newCords.left < PinArrowCord.MAX_X - PIN_MAIN_SIZE) {
+        if (newCords.top > PinArrowCord.MIN_Y &&
+            newCords.top < PinArrowCord.MAX_Y &&
+            newCords.left > PinArrowCord.MIN_X &&
+            newCords.left < PinArrowCord.MAX_X - PIN_MAIN_SIZE
+        ) {
           startMouseCords.x = mousemoveEvt.clientX;
           startMouseCords.y = mousemoveEvt.clientY;
 
